@@ -1,12 +1,12 @@
 # Mi-primera-chamba
 recuerdo el dia que de la chamba yo me enamore
 
-## Requisitos de Python
+#### Requisitos de Python
 
 . Instalar openpyxl: pip install openpyxl
 . Instalar requests: pip install requests
 
-## Requisitos del excel:
+#### Requisitos del excel:
 
 . No tener espacios entre productos
 . Tener la cantidad exacta de columnas como se muestra en el archivo de ejemplo
