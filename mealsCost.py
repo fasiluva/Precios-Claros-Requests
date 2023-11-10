@@ -1,6 +1,7 @@
-import openpyxl 
+from openpyxl import load_workbook
+from openpyxl import Workbook
 from openpyxl.styles import PatternFill 
-from pprint import pprint
+# from pprint import pprint
 
 """
 . El precio por unidad del producto se calcula automaticamente en el excel. No hay que programarlo.
@@ -10,12 +11,9 @@ from pprint import pprint
 """
 
 
-def extraerPrecios(sheet):
-
+def extraerPrecios(sheet : Workbook) -> dict[str, list[float, float]]:
     """
-    extraerPrecios :: Worksheet -> dict(str : float)
-
-    . Extrae todos los productos de la lista del excel. Guarda el nombre del mismo y
+    * Extrae todos los productos de la lista del excel. Guarda el nombre del mismo y
       el precio estandarizado dividido la cantidad de unidades en el.
 
     Por ejemplo, en 1 kg de anchoas hay aproximadamente 65 anchoas, y el precio del kilo de anchoas 
@@ -29,8 +27,8 @@ def extraerPrecios(sheet):
         if row[0].value != None:
             # Si la celda del nombre del producto no es None, entonces no termino la lista.
             try: 
-                pprint(row[0].value)
-                productos[row[0].value.casefold()] = float(row[6].value) / float(row[7].value) 
+                # print(row[0].value)
+                productos[row[0].value.casefold()] = [float(row[6].value), float(row[7].value)]
 
             except TypeError:
                 # Si al intentar hacer la division hubo un TypeError, entonces no se pudo calcular el precio
@@ -50,7 +48,7 @@ def main():
     archivo_xlsx = 'Costodecarta(2).xlsx'
 
     try: 
-        workbook = openpyxl.load_workbook(filename=archivo_xlsx)
+        workbook = load_workbook(filename=archivo_xlsx)
         sheet = workbook.get_sheet_by_name("Maestro de provedores")
 
     except:
@@ -58,59 +56,64 @@ def main():
         return
 
     productos = extraerPrecios(sheet)
-    
-    sheet = workbook.get_sheet_by_name("CARTA")
-
+    sheet = workbook["CARTA"]
     columnaNombres = sheet['D']
 
-    #! CAMBIAR NOMBRE DE ESTA VARIABLE A desfaseArch.
-    i = 6
+    iterRow = 6
 
     while True: 
         try: 
-            if columnaNombres[i].fill.patternType == 'solid':
+            if columnaNombres[iterRow].fill.patternType == 'solid':
                 # Si la celda tiene un subrayado, entonces esta celda es el nombre del platillo.
 
-                i += 1 # El siguiente item de la lista es el nombre de un producto de la receta.
+                iterRow += 1
 
-                while columnaNombres[i].value != None:
+                while columnaNombres[iterRow].value != None:
                     # Mientras que la celda en la que estoy no sea None, entonces esta es el nombre de un producto.
 
                     try: 
                         # Intenta buscar el producto en la lista del excel.
-                        productoActual = productos[columnaNombres[i].value.casefold()]
+                        productoActual = productos[columnaNombres[iterRow].value.casefold()]
 
                     except KeyError:
                         # Si no encontro el producto, lo notifica, cambia el color de la celda y continua a la siguiente iteracion.
-                        print("\nNO ENCONTRADO: ", columnaNombres[i].value.casefold())
-                        sheet[f'E{i + 1}'].fill = PatternFill(fill_type='solid', fgColor='E6B8B7')
-                        i += 1
+                        print("\nNO ENCONTRADO: ", columnaNombres[iterRow].value.casefold())
+                        sheet[f'E{iterRow + 1}'].fill = PatternFill(fill_type='solid', fgColor='E6B8B7')
+                        iterRow += 1
                         continue 
                         
                     else: 
                         # Si encontro el producto en la lista del excel:
-                        pprint(productoActual) 
-                    
+                        
+                        # print(productoActual) 
+
                         try: 
                             # Intenta escribir en la casilla el precio del producto estandarizado.
-                            sheet[f'E{i + 1}'] = float(productoActual)
-                            sheet[f'E{i + 1}'].fill = PatternFill(fill_type= 'solid', fgColor= 'B8CCE4') # Color azul
+                            
+                            if sheet[f'C{iterRow + 1}'].value != 'un' and sheet[f'C{iterRow + 1}'].value != 'u':
+                                sheet[f'E{iterRow + 1}'] = productoActual[0]
+
+                            else: 
+                                # Si la unidad esta medida en unidades, el precio se evalua devuelve en unidades, para que el calculo
+                                # sea correcto.
+                                sheet[f'E{iterRow + 1}'] = productoActual[0] / productoActual[1]
+                            
+                            sheet[f'E{iterRow + 1}'].fill = PatternFill(fill_type= 'solid', fgColor= 'B8CCE4') # Color azul
 
                         except: 
                             # Si no pudo escribir el precio estandarizado, marca la casilla como incompleta y continua la siguiente iteracion.
-                            sheet[f'E{i + 1}'].fill = PatternFill(fill_type='solid', fgColor='E6B8B7') # Color rojo
-                            i += 1
+                            sheet[f'E{iterRow + 1}'].fill = PatternFill(fill_type='solid', fgColor='E6B8B7') # Color rojo
+                            iterRow += 1
                             continue
-                            # print("Producto ", columnaNombres[i].value, " no tiene precio estandar.")
                     
-                    i += 1
+                    iterRow += 1
 
         except IndexError:
             # Si hubo un IndexError, se llego al final del excel y no hay mas recetas. Sale del while.
             break
         
         else: 
-            i += 1
+            iterRow += 1
 
     workbook.save(filename=archivo_xlsx)
 

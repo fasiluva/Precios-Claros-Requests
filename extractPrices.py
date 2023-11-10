@@ -1,4 +1,6 @@
+import openpyxl
 from openpyxl import load_workbook
+from openpyxl import Workbook
 from openpyxl.styles import PatternFill
 import requests
 from datetime import datetime
@@ -19,24 +21,19 @@ CADA PRODUCTO TIENE LA SIGUIENTE FORMA (en el ejemplo, se busco "galletitas oreo
 """
 
 
-def precioEstandarizado(cantidad : float, unidad : str, precio : float):
-
+def precioEstandarizado(cantidad : float, unidad : str, precio : float) -> float | str:
     """
-    precioEstandarizado :: float, str, float -> float | str
-
-    . Trata de pasar las unidades de masa a kg, las de unidades a una unidad y las volumetricas a lt. Simplemente
-      esta haciendo una regla de 3 simple. Por ejemplo:
+    * Trata de pasar las unidades de masa a kg, las de unidades a una unidad y las volumetricas a lt. Si no encuentra la unidad, devuelve '?'.
+      Simplemente esta haciendo una regla de 3 simple. Por ejemplo:
       
     cantidad = 150
     unidad = 'gr'
     precio = 450
 
-    150 gr  --> 450 pesos
+    150 gr  --> 450 pesos \\
     1000 gr --> x
 
     x = 1000 * 450 / 150 = 3000 pesos.  
-
-    . Si no encuentra la unidad, devuelve '?'.
     """
 
     if unidad.casefold() == 'lt' or unidad.casefold() == 'kg' or unidad.casefold() == 'u' or unidad.casefold() == 'un':
@@ -49,31 +46,25 @@ def precioEstandarizado(cantidad : float, unidad : str, precio : float):
         return '?'
 
 
-def promedio(min, max):
-
+def promedio(min : int, max : int) -> float:
     """
-    promedio :: int int -> float
-
-    . Calcula el promedio entre los 2 valores.
+    * Calcula el promedio entre los 2 valores.
     """
 
     return (min + max) / 2
 
 
-def extract_products(sheet):
-
+def extract_products(sheet : Workbook) -> list[str]:
     """
-    extract_products :: Worksheet -> list(str)
-
-    . Recibe la hoja de calculo y extrae los productos.
-    . Si la marca del producto es NA, quiere decir que no sera buscado.
-    . Si la marca del producto no es NA, entonces sera buscada.
+    * Recibe la hoja de calculo y extrae los productos.
+    * Si la marca del producto es NA, quiere decir que no sera buscado.
+    * Si la marca del producto no es NA, entonces sera buscada.
 
     ! NO PUEDE HABER ESPACIOS EN BLANCO ENTRE PRODUCTOS !
     """
 
-    nombres = sheet['B'] # Lista de cell
-    marca = sheet['C'] # Lista de cell
+    nombres = sheet['B']    # Lista de cell
+    marca = sheet['C']      # Lista de cell
     nombresFinal = []
 
     # Variable que indica desde que fila se empieza a contar los productos
@@ -105,14 +96,14 @@ def main():
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)
-        sheet = workbook.get_sheet_by_name("Maestro de provedores")
+        sheet = workbook["Maestro de provedores"]
     except:
         print("ERROR: Archivo de materias primas no encontrado.\n")
         return
     else: 
         productos = extract_products(sheet)
 
-    # Headers que se usaran en la request. No tocar
+    # Headers que se usaran en la request. No tocar!
     headers = {
         'Method': 'GET',
         'Accept': 'application/json, text/plain, */*',
@@ -204,7 +195,6 @@ def main():
 main()
 
 """
-
 headers = {
         'authority': 'd3e6htiiul5ek9.cloudfront.net',
         'method': '',
