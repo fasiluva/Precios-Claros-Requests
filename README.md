@@ -3,8 +3,9 @@ recuerdo el dia que de la chamba yo me enamore
 
 #### Requisitos de Python
 
-1. Instalar openpyxl: `pip install openpyxl` 
-2. Instalar requests: `pip install requests` 
+1. Instalar Python desde la web.
+2. Instalar openpyxl: `pip install openpyxl` 
+3. Instalar requests: `pip install requests` 
 
 #### Requisitos del excel:
 

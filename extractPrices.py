@@ -36,10 +36,13 @@ def precioEstandarizado(cantidad : float, unidad : str, precio : float) -> float
     x = 1000 * 450 / 150 = 3000 pesos.  
     """
 
-    if unidad.casefold() == 'lt' or unidad.casefold() == 'kg' or unidad.casefold() == 'u' or unidad.casefold() == 'un':
+    unidadesMayores = {'lt', 'kg', 'u', 'un', 'kgm', 'uni'}
+    unidadesMenores = {'cc', 'gr', 'ml', 'mlt', 'grs'}
+
+    if unidad.casefold() in unidadesMayores:
         return precio / cantidad
     
-    if unidad.casefold() == 'cc' or unidad.casefold() == 'gr' or unidad.casefold() == 'ml':
+    if unidad.casefold() in unidadesMenores:
         return precio / (cantidad / 1000)
 
     else: 
