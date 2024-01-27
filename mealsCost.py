@@ -120,16 +120,3 @@ def main():
 
 main()
 
-""" 
-. Ajillo
-* Azucar caramelo
-? Demi glase
-* Cafe pocillos
-* Bocha de helado
-* Naranja jugo
-* Almendrado bocha
-. Crema chantilly
-. Papa gratin
-? Yemas
-? Claras
-"""

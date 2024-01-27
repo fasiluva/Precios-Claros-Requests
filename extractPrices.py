@@ -1,4 +1,3 @@
-import openpyxl
 from openpyxl import load_workbook
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
