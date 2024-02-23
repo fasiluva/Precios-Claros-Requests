@@ -30,9 +30,9 @@ def extraerPrecios(sheet : Workbook) -> dict[str, list[float, float]]:
                 # print(row[0].value)
                 productos[row[0].value.casefold()] = [float(row[6].value), float(row[7].value)]
 
-            except TypeError:
-                # Si al intentar hacer la division hubo un TypeError, entonces no se pudo calcular el precio
-                # estandar anteriormente, o la casilla de 'agrupados en' esta vacia. Continua la iteracion.
+            except (TypeError, ValueError):
+                # Si la casilla de "Precio (por kg/lt/un)" tiene un '?', no lo agrega. 
+                # Si la casilla "Agrupados en" no es un numero, no lo agrega.
                 continue
         
         else:
@@ -45,7 +45,7 @@ def extraerPrecios(sheet : Workbook) -> dict[str, list[float, float]]:
 def main(): 
 
     # Ruta del archivo
-    archivo_xlsx = 'Costodecarta(2).xlsx'
+    archivo_xlsx = 'E:\Mi-primera-chamba\Costodecarta(2).xlsx'
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)
@@ -119,4 +119,4 @@ def main():
 
 
 main()
-
+input()

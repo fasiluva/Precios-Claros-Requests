@@ -7,7 +7,6 @@ from datetime import datetime
 
 """
 CADA PRODUCTO TIENE LA SIGUIENTE FORMA (en el ejemplo, se busco "galletitas oreo" en el request): 
-
 {
     "marca": "OREO", 
     "id": "7622201521967", 
@@ -15,7 +14,8 @@ CADA PRODUCTO TIENE LA SIGUIENTE FORMA (en el ejemplo, se busco "galletitas oreo
     "precioMin": 450.53, 
     "nombre": "Galletitas Oreo 36 Un 118 Gr", 
     "presentacion": "118.0 gr", 
-    "cantSucursalesDisponible": 1
+    "cantSucursalesDisponible": 1,
+    ... 
 }
 """
 
@@ -29,14 +29,14 @@ def precioEstandarizado(cantidad : float, unidad : str, precio : float) -> float
     unidad = 'gr'
     precio = 450
 
-    150 gr  --> 450 pesos \\
+    150 gr  --> 450 pesos 
     1000 gr --> x
 
     x = 1000 * 450 / 150 = 3000 pesos.  
     """
 
-    unidadesMayores = {'lt', 'kg', 'u', 'un', 'kgm', 'uni'}
-    unidadesMenores = {'cc', 'gr', 'ml', 'mlt', 'grs'}
+    unidadesMayores = {'lt', 'kg', 'u', 'un', 'kgm', 'uni', 'unidad', 'lts', 'l'}
+    unidadesMenores = {'cc', 'gr', 'ml', 'mlt', 'grs', 'g', 'mm', 'gramos'}
 
     if unidad.casefold() in unidadesMayores:
         return precio / cantidad
@@ -65,8 +65,8 @@ def extract_products(sheet : Workbook) -> list[str]:
     ! NO PUEDE HABER ESPACIOS EN BLANCO ENTRE PRODUCTOS !
     """
 
-    nombres = sheet['B']    # Lista de cell
-    marca = sheet['C']      # Lista de cell
+    nombres = sheet['B']    # Lista de nombres de productos
+    marca = sheet['C']      # Lista de marcas
     nombresFinal = []
 
     # Variable que indica desde que fila se empieza a contar los productos
@@ -94,7 +94,7 @@ def extract_products(sheet : Workbook) -> list[str]:
 def main():
 
     # Direccion relativa al archivo
-    archivo_xlsx = 'Costodecarta(2).xlsx'
+    archivo_xlsx = 'E:\Mi-primera-chamba\Costodecarta(2).xlsx'
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)
