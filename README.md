@@ -1,5 +1,4 @@
-# Mi-primera-chamba
-recuerdo el dia que de la chamba yo me enamore
+# Descripción 
 
 #### Requisitos de Python
 
