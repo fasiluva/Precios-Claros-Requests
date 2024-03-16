@@ -45,14 +45,15 @@ def extraerPrecios(sheet : Workbook) -> dict[str, list[float, float]]:
 def main(): 
 
     # Ruta del archivo
-    archivo_xlsx = 'E:\Mi-primera-chamba\Costodecarta(2).xlsx'
+    archivo_xlsx = 'Costodecarta(2).xlsx'
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)
         sheet = workbook.get_sheet_by_name("Maestro de provedores")
 
     except:
-        print("ERROR: Archivo de materias primas no encontrado.\n")
+        print("ERROR: Archivo de materias primas no encontrado. Contactar con Valentin!.\n\nEnter para salir.")
+        s = input()
         return
 
     productos = extraerPrecios(sheet)
@@ -119,4 +120,5 @@ def main():
 
 
 main()
+print("\nListo!. Enter para salir.")
 input()

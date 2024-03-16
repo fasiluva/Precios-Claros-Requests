@@ -77,7 +77,7 @@ def extract_products(sheet : Workbook) -> list[str]:
         
         try: 
 
-            if marca[desfaseArch + iter].value == 'NA':
+            if marca[desfaseArch + iter].value == 'NA' or marca[desfaseArch + iter].value == "ANCLADO":
                 nombresFinal.append('-')
 
             else: 
@@ -94,13 +94,14 @@ def extract_products(sheet : Workbook) -> list[str]:
 def main():
 
     # Direccion relativa al archivo
-    archivo_xlsx = 'E:\Mi-primera-chamba\Costodecarta(2).xlsx'
+    archivo_xlsx = 'Costodecarta(2).xlsx'
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)
         sheet = workbook["Maestro de provedores"]
     except:
-        print("ERROR: Archivo de materias primas no encontrado.\n")
+        print("ERROR: Archivo de materias primas no encontrado. Contactar con Valentin!.\n\nEnter para salir.")
+        s = input()
         return
     else: 
         productos = extract_products(sheet)
@@ -132,7 +133,8 @@ def main():
             response = requests.get(url, headers= headers)
 
             if response.status_code != 200: 
-                print("ERROR: Request denegada. Estado: ", response.status_code)
+                print("ERROR: Request denegada. Contactar con Valentin!. Estado: ", response.status_code, "/n/nEnter para salir")
+                s = input()
                 return
 
             # Pasa el response a un diccionario.
