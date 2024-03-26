@@ -44,7 +44,7 @@ El archivo mealsCost.py actualiza los costos de los platos de un restaurante, qu
 
 #### Hoja de maestro de proveedores (lista de productos)
 
-![Formato de la tabla Excel](docs\TablaDeProductos.png)
+![Formato de la tabla Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/TablaDeProductos.png?raw=true)
 Imágen 1: Resumen de los datos de la tabla.
 
 * **¿Por qué la marca puede ser calculada por el programa o modificable por el usuario?** Cada casilla de la columna "Marca" puede tener 5 valores posibles:
