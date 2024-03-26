@@ -44,7 +44,7 @@ El archivo mealsCost.py actualiza los costos de los platos de un restaurante, qu
 
 #### Hoja de maestro de proveedores (lista de productos)
 
-![Formato de la tabla Excel](docs\TablaDeProductos.png)
+![Formato de la tabla Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/TablaDeProductos.png?raw=true)
 Imágen 1: Resumen de los datos de la tabla.
 
 * **¿Por qué la marca puede ser calculada por el programa o modificable por el usuario?** Cada casilla de la columna "Marca" puede tener 5 valores posibles:
@@ -56,15 +56,15 @@ Imágen 1: Resumen de los datos de la tabla.
 
 * **¿Qué es la columna "Agrupados en"?** Se usa para especificar cuántas "porciones" conforman el producto. Por ejemplo, un paquete de masitas "Surtido Bagley" tiene (aproximadamente) 80 masitas, entonces decimos que dicho producto "está agrupado" en 80 masitas. Esta columna pierde sentido si se trata de productos que no están divididos en porciones, por ejemplo, aceite de girasol o crema de leche. En esos casos, simplemente se pone 1 en la casilla. Esta columna es útil para la etapa de actualización, para las recetas que especifican las proporciones por porción y no por paquete. Por ejemplo, en el ejemplo de carta proporcionado, la receta "Pincho de dátiles" mide los dátiles por unidad, pero al extraer dicho producto de la página, se encuentra por kg. Entonces se calcula una aproximación de cuántos dátiles hay en un kg y se escribe en la casilla. Esta casilla es opcional si no se realizará la etapa de actualización, o no está interesado en tener tanta precisión con los numeros.
 
-![Ejemplo de la tabla Excel](docs\excel-example1.png)
+![Ejemplo de la tabla Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/excel-example1.PNG?raw=true)
 Imágen 2: Ejemplo de tabla y sus resultados.
 
 #### Hoja de carta 
 
-![Formato de la columna de recetas](docs\FormatoDeLaCarta.png)
+![Formato de la columna de recetas](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/FormatoDeLaCarta.png?raw=true)
 Imágen 3: Formato de columna 'D' de la hoja de recetas (formato de recetas).
 
-![Formato de receta en Excel](docs\receta-example.png)
+![Formato de receta en Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/receta-example.PNG?raw=true)
 Imágen 4: Formato de receta en Excel.
 
 * Las casillas que tienen la letra en **negrita** están calculados con una macro del propio Excel.
