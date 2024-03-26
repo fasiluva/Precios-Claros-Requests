@@ -16,7 +16,7 @@ El archivo mealsCost.py actualiza los costos de los platos de un restaurante, qu
 
 ## Propósitos
 
-* Funcionar como un programa auxiliar para restaurantes en Argentina, facilitando la actualización de precios, o para otros proyectos que requieran una automatización casi completa en la extracción de precios.
+* Funcionar como un programa auxiliar para restaurantes en Argentina, facilitando la actualización de precios, o para otros proyectos o comercios que requieran una automatización casi completa en la extracción de precios de productos.
 * Demostrar mi habilidad para desarrollar programas que optimicen procesos y actividades en diversas áreas y sectores.
 
 ## Alcance 
@@ -116,4 +116,6 @@ Imágen 4: Formato de receta en Excel.
         * Vuelva al paso 2.
 
 ---
-Los contenidos de preciosclaros.gob.ar están licenciados bajo [Creative Commons Reconocimiento 2.5 Argentina License](https://creativecommons.org/licenses/by/2.5/ar/). 
+Los contenidos de preciosclaros.gob.ar están licenciados bajo [Creative Commons Reconocimiento 2.5 Argentina License](https://creativecommons.org/licenses/by/2.5/ar/). <br><br>
+_Aclaracion 1:_ si bien este proyecto fue destinado a un restaurante, la extraccion de precios se podria hacer sobre cualquier producto que se encuentre en la pagina web. Está en usted extender las aplicaciones del programa! <br><br>
+_Aclaracion 2:_ al momento de desarrollar éste proyecto tenia un conocimiento intermedio del lenguaje Python. No se sorprenda si ve ineficiencia en el codigo o en los tratamiento del problema. Acepto cualquier tipo de crítica constructiva mediante alguna de las redes suministradas al comienzo :). 
