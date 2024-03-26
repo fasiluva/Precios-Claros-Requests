@@ -93,7 +93,7 @@ Imágen 4: Formato de receta en Excel.
 1. Las recetas comienzan en la linea 7 (se puede modificar en los archivos .py)
 1. El archivo de recetas debe tener: los nombres de la receta y su resaltado, las cantidades de los productos y los espacios entre productos y nombre de receta **EXACTAMENTE COMO ESTA EN LA IMÁGEN 4**. Sino puede sobreescribir en lugares del excel que no corresponden o leer mal el archivo.   
 
-## Ejecucion
+## Ejecución
 
 1. Clone el repositorio, o descargue el Zip y descomprímalo.
 2. Vaya a la carpeta `dist`.
