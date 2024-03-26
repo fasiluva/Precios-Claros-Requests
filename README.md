@@ -112,5 +112,5 @@ Imágen 4: Formato de receta en Excel.
         10. Contacte con el desarrollador.
     
     * Si los programas funcionan, descargue el módulo `pyinstaller` para Python, vamos a guardar los archivos en un `.exe`:
-        11. Ejecute en la terminal: `pyinstaller -F extractPrices.py` y `pyinstaller -F mealsCost.py`. Ésto creara la carpeta `dist` en el mismo directorio.
+        11. Ejecute en la terminal: `pyinstaller -F extractPrices.py && pyinstaller -F mealsCost.py`. Ésto creara la carpeta `dist` en el mismo directorio.
         12. Vuelva al paso 2.
