@@ -1,5 +1,5 @@
-Programa hecho por Valentin Sosa, vea mas de mis trabajos en:
-GitHub: https://github.com/fasiluva 
+Hecho por Valentin Sosa. Vea mas de mis trabajos en: <br>
+GitHub: https://github.com/fasiluva <br>
 Linkedin: https://www.linkedin.com/in/valentin-sosa-aa55a9294/.
 
 # Descripción del proyecto.
@@ -114,3 +114,6 @@ Imágen 4: Formato de receta en Excel.
     * Si los programas funcionan, descargue el módulo `pyinstaller` para Python, vamos a guardar los archivos en un `.exe`:
         * Ejecute en la terminal: `pyinstaller -F extractPrices.py && pyinstaller -F mealsCost.py`. Ésto creara la carpeta `dist` (si aún no existia) en el mismo directorio y agregara los archivos `.exe` correspondientes.
         * Vuelva al paso 2.
+
+---
+Los contenidos de preciosclaros.gob.ar están licenciados bajo [Creative Commons Reconocimiento 2.5 Argentina License](https://creativecommons.org/licenses/by/2.5/ar/). 
