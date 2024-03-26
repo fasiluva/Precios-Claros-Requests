@@ -107,10 +107,10 @@ Imágen 4: Formato de receta en Excel.
 7. Abra una terminal en dicha carpeta, y ejecute los .py de manera manual: `python extractPrices.py` y `python mealsCost.py`.
 
     * Si los programas no se ejecutan de manera esperada:
-        8. Revise tener instalados todos los módulos pedidos anteriormente.
-        9. Vea que la pagina web este actualmente activa y funcionando. Si no esta activa, lo más probable es que se encuentre en mantenimiento. Reintente mas tarde.
-        10. Contacte con el desarrollador.
+        * Revise tener instalados todos los módulos pedidos anteriormente.
+        * Vea que la pagina web este actualmente activa y funcionando. Si no esta activa, lo más probable es que se encuentre en mantenimiento. Reintente mas tarde.
+        *  Contacte con el desarrollador.
     
     * Si los programas funcionan, descargue el módulo `pyinstaller` para Python, vamos a guardar los archivos en un `.exe`:
-        11. Ejecute en la terminal: `pyinstaller -F extractPrices.py && pyinstaller -F mealsCost.py`. Ésto creara la carpeta `dist` en el mismo directorio.
-        12. Vuelva al paso 2.
+        * Ejecute en la terminal: `pyinstaller -F extractPrices.py && pyinstaller -F mealsCost.py`. Ésto creara la carpeta `dist` (si aún no existia) en el mismo directorio y agregara los archivos `.exe` correspondientes.
+        * Vuelva al paso 2.
