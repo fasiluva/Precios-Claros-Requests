@@ -42,11 +42,11 @@ El archivo mealsCost.py actualiza los costos de los platos de un restaurante, qu
 
 ## Formato del Excel
 
-#### Hoja de maestro de proveedores (lista de productos)
+### Hoja de maestro de proveedores (lista de productos)
 
 ![Formato de la tabla Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/TablaDeProductos.png?raw=true)
 Imágen 1: Resumen de los datos de la tabla.
-
+<br><br>
 * **¿Por qué la marca puede ser calculada por el programa o modificable por el usuario?** Cada casilla de la columna "Marca" puede tener 5 valores posibles:
     * **Nada**: significa que el producto no se buscó nunca antes, o la casilla fue borrada intencionalmente.
     * **Una marca del producto**: el producto fue buscado anteriormente y encontrado en la página, por lo que se escribe la marca que se encontró.
@@ -58,17 +58,17 @@ Imágen 1: Resumen de los datos de la tabla.
 
 ![Ejemplo de la tabla Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/excel-example1.PNG?raw=true)
 Imágen 2: Ejemplo de tabla y sus resultados.
+<br><br>
+_Consejo: evite el uso de símbolos (comillas, paréntesis, tildes, etc) y la 'ñ' para buscar productos. Escriba los nombres de la manera menos rebuscada posible. Trate de no incluir numeros en "Detalle"._
 
-* Consejo: evite el uso de símbolos (comillas, paréntesis, tildes, etc) y la 'ñ' para buscar productos. Escriba los nombres de la manera menos rebuscada posible. Trate de no incluir numeros en "Detalle".
-
-#### Hoja de carta 
+### Hoja de carta 
 
 ![Formato de la columna de recetas](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/FormatoDeLaCarta.png?raw=true)
 Imágen 3: Formato de columna 'D' de la hoja de recetas (formato de recetas).
-
-![Formato de receta en Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/receta-example.PNG?raw=true)
+<br><br><br>
+![Formato de receta en Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/receta-example.PNG?raw=true) <br>
 Imágen 4: Formato de receta en Excel.
-
+<br>
 * Las casillas que tienen la letra en **negrita** están calculados con una macro del propio Excel.
 
 ---
