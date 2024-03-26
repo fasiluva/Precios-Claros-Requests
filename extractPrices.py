@@ -97,7 +97,7 @@ def extract_products(sheet : Workbook) -> list[str]:
 def main():
 
     # Direccion relativa al archivo
-    archivo_xlsx = 'Costodecarta(2).xlsx'
+    archivo_xlsx = 'products.xlsx'
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)

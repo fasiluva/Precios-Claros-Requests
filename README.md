@@ -75,7 +75,7 @@ Imágen 4: Formato de receta en Excel.
 
 1. Python 3.0 o superior.
 2. Librerias/módulos de Python: `openpyxl` y `requests`.
-3. Archivo .xlsx (Excel 2007 o superior).
+3. Archivo .xlsx (Excel 2007 o superior), llamado `products`.
 4. Un navegador web de los siguientes: Google Chrome, Opera, Opera GX, Firefox (desconozco el funcionamiento del programa en otros navegadores).
 
 #### Requisitos del excel

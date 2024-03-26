@@ -48,7 +48,7 @@ def extraerPrecios(sheet : Workbook) -> dict[str, list[float, float]]:
 def main(): 
 
     # Ruta del archivo
-    archivo_xlsx = 'Costodecarta(2).xlsx'
+    archivo_xlsx = 'products.xlsx'
 
     try: 
         workbook = load_workbook(filename=archivo_xlsx)
