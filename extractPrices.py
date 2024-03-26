@@ -1,3 +1,7 @@
+# Programa hecho por Valentin Sosa, vea mas de mis trabajos en:
+# GitHub: https://github.com/fasiluva 
+# Linkedin: https://www.linkedin.com/in/valentin-sosa-aa55a9294/.
+
 from openpyxl import load_workbook
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill
@@ -6,7 +10,7 @@ from datetime import datetime
 # from pprint import pprint
 
 """
-CADA PRODUCTO TIENE LA SIGUIENTE FORMA (en el ejemplo, se busco "galletitas oreo" en el request): 
+CADA PRODUCTO TIENE LA SIGUIENTE FORMA AL SER SOLICITADO AL SERVIDOR DE LA PAGINA (en el ejemplo, se busco "galletitas oreo" en el request): 
 {
     "marca": "OREO", 
     "id": "7622201521967", 
@@ -69,8 +73,7 @@ def extract_products(sheet : Workbook) -> list[str]:
     marca = sheet['C']      # Lista de marcas
     nombresFinal = []
 
-    # Variable que indica desde que fila se empieza a contar los productos
-    desfaseArch = 6
+    desfaseArch = 6         #! Desfase de la hoja del Excel (MODIFICAR SEGUN EXCEL, SI ES NECESARIO)
     iter = 0
 
     while True:
@@ -106,7 +109,7 @@ def main():
     else: 
         productos = extract_products(sheet)
 
-    # Headers que se usaran en la request. No tocar!
+    #! Headers que se usaran en la request. No tocar!
     headers = {
         'Method': 'GET',
         'Accept': 'application/json, text/plain, */*',
@@ -120,14 +123,14 @@ def main():
     }
 
     i = 0
-    desfaseArch = 7 
+    desfaseArch = 7         #! Desfase de la hoja del Excel (MODIFICAR SEGUN EXCEL, SI ES NECESARIO)
 
     for producto in productos:
 
         # Si la marca del producto no es 'NA' := '-'
         if producto != '-':
 
-            # URL de la peticion
+            #? URL de la peticion
             url = f"https://d3e6htiiul5ek9.cloudfront.net/prod/productos?string={producto}&array_sucursales=15-1-5274,15-1-5169,19-1-00616,13-1-126,15-1-280,10-2-256,2005-1-49,10-1-156,24-1-337,15-1-6017,15-1-211,9-1-631,2005-1-41,15-1-5180,19-1-02064,23-1-6294,15-1-282,15-1-5482,15-1-5586,15-1-5219,15-1-243,2-1-100,10-1-229,11-4-1046,24-1-317,15-1-234,2005-1-24,15-1-5575,10-2-255,9-1-669&offset=0&limit=50&sort=-cant_sucursales_disponible"
 
             response = requests.get(url, headers= headers)
@@ -192,13 +195,15 @@ def main():
                 
         i += 1 
 
-    workbook.save(filename=archivo_xlsx)    # Guarda el archivo. Si se sale antes, no guardara nada.
+    workbook.save(filename=archivo_xlsx)    #? Guarda el archivo. Si se sale antes, no guardara nada.
     workbook.close()
 
 
 main()
+print("\nListo!. Enter para salir.")
+input()
 
-"""
+""" HEADERS OPCIONALES. No usar.
 headers = {
         'authority': 'd3e6htiiul5ek9.cloudfront.net',
         'method': '',

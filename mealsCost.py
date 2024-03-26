@@ -1,3 +1,7 @@
+# Programa hecho por Valentin Sosa, vea mas de mis trabajos en:
+# GitHub: https://github.com/fasiluva 
+# Linkedin: https://www.linkedin.com/in/valentin-sosa-aa55a9294/.
+
 from openpyxl import load_workbook
 from openpyxl import Workbook
 from openpyxl.styles import PatternFill 
@@ -6,10 +10,9 @@ from openpyxl.styles import PatternFill
 """
 . El precio por unidad del producto se calcula automaticamente en el excel. No hay que programarlo.
 . Hay recetas que usan otras recetas para elaborar productos (por ejemplo, el pan). Estos no son encontrados,
-  ya que no estan en el excel de productos. Corregir?
+  ya que no estan en el excel de productos. 
 
 """
-
 
 def extraerPrecios(sheet : Workbook) -> dict[str, list[float, float]]:
     """
@@ -60,7 +63,7 @@ def main():
     sheet = workbook["CARTA"]
     columnaNombres = sheet['D']
 
-    iterRow = 6
+    iterRow = 6     #! Desfase de la hoja del Excel (MODIFICAR SEGUN EXCEL, SI ES NECESARIO)
 
     while True: 
         try: 

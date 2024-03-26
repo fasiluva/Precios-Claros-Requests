@@ -1,5 +1,5 @@
-(['E:\\Mi-primera-chamba\\extractPrices.py'],
- ['E:\\Mi-primera-chamba'],
+(['C:\\Users\\fasil\\OneDrive\\Documents\\GitHub\\Mi-primera-chamba\\extractPrices.py'],
+ ['C:\\Users\\fasil\\OneDrive\\Documents\\GitHub\\Mi-primera-chamba'],
  [],
  ['C:\\Users\\fasil\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\_pyinstaller_hooks_contrib\\hooks\\stdhooks',
   'C:\\Users\\fasil\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\_pyinstaller_hooks_contrib\\hooks'],
@@ -15,7 +15,9 @@
  [('pyi_rth_inspect',
    'C:\\Users\\fasil\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\PyInstaller\\hooks\\rthooks\\pyi_rth_inspect.py',
    'PYSOURCE'),
-  ('extractPrices', 'E:\\Mi-primera-chamba\\extractPrices.py', 'PYSOURCE')],
+  ('extractPrices',
+   'C:\\Users\\fasil\\OneDrive\\Documents\\GitHub\\Mi-primera-chamba\\extractPrices.py',
+   'PYSOURCE')],
  [('inspect',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\inspect.py',
@@ -400,18 +402,6 @@
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\ast.py',
    'PYMODULE'),
-  ('tracemalloc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
-   'PYMODULE'),
-  ('stringprep',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\stringprep.py',
-   'PYMODULE'),
-  ('_py_abc',
-   'C:\\Program '
-   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
-   'PYMODULE'),
   ('subprocess',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\subprocess.py',
@@ -419,6 +409,18 @@
   ('signal',
    'C:\\Program '
    'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\signal.py',
+   'PYMODULE'),
+  ('_py_abc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\_py_abc.py',
+   'PYMODULE'),
+  ('stringprep',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\stringprep.py',
+   'PYMODULE'),
+  ('tracemalloc',
+   'C:\\Program '
+   'Files\\WindowsApps\\PythonSoftwareFoundation.Python.3.12_3.12.752.0_x64__qbz5n2kfra8p0\\Lib\\tracemalloc.py',
    'PYMODULE'),
   ('datetime',
    'C:\\Program '
@@ -1362,7 +1364,7 @@
  [],
  [],
  [('base_library.zip',
-   'E:\\Mi-primera-chamba\\build\\extractPrices\\base_library.zip',
+   'C:\\Users\\fasil\\OneDrive\\Documents\\GitHub\\Mi-primera-chamba\\build\\extractPrices\\base_library.zip',
    'DATA'),
   ('certifi\\py.typed',
    'C:\\Users\\fasil\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python312\\site-packages\\certifi\\py.typed',
