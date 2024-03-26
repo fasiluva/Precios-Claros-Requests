@@ -59,6 +59,8 @@ Imágen 1: Resumen de los datos de la tabla.
 ![Ejemplo de la tabla Excel](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/excel-example1.PNG?raw=true)
 Imágen 2: Ejemplo de tabla y sus resultados.
 
+* Consejo: evite el uso de símbolos (comillas, paréntesis, tildes, etc) y la 'ñ' para buscar productos. Escriba los nombres de la manera menos rebuscada posible. Trate de no incluir numeros en "Detalle".
+
 #### Hoja de carta 
 
 ![Formato de la columna de recetas](https://github.com/fasiluva/Precios-Claros-WebClient/blob/main/docs/FormatoDeLaCarta.png?raw=true)
@@ -117,5 +119,5 @@ Imágen 4: Formato de receta en Excel.
 
 ---
 Los contenidos de preciosclaros.gob.ar están licenciados bajo [Creative Commons Reconocimiento 2.5 Argentina License](https://creativecommons.org/licenses/by/2.5/ar/). <br><br>
-_Aclaracion 1:_ si bien este proyecto fue destinado a un restaurante, la extraccion de precios se podria hacer sobre cualquier producto que se encuentre en la pagina web. Está en usted extender las aplicaciones del programa! <br><br>
-_Aclaracion 2:_ al momento de desarrollar éste proyecto tenia un conocimiento intermedio del lenguaje Python. No se sorprenda si ve ineficiencia en el codigo o en los tratamiento del problema. Acepto cualquier tipo de crítica constructiva mediante alguna de las redes suministradas al comienzo :). 
+_Aclaracion 1:_ si bien este proyecto fue destinado a un restaurante, la extracción de precios se podria hacer sobre cualquier producto que se encuentre en la pagina web. Está en usted extender las aplicaciones del programa! <br><br>
+_Aclaracion 2:_ al momento de desarrollar éste proyecto (2023) tenia un conocimiento intermedio del lenguaje Python. No se sorprenda si ve ineficiencia en el codigo o en los tratamiento del problema. Acepto cualquier tipo de crítica constructiva mediante alguna de las redes suministradas al comienzo :). 
